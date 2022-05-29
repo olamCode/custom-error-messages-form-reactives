@@ -1,0 +1,19 @@
+<div class="container-form">
+  <form [formGroup]="formRegister" (ngSubmit)="register()">
+    <h1>Register</h1>
+    <input formControlName="name" type="text" placeholder="Name" />
+    <span class="error-form" *ngIf="fieldValidation('name')">
+      {{ errorMsg.name }}
+    </span>
+    <input formControlName="email" type="email" placeholder="Email" />
+    <span class="error-form" *ngIf="fieldValidation('email')">
+      {{ errorMsg.email }}
+    </span>
+
+    <input formControlName="password" type="password" placeholder="Password" />
+    <span class="error-form" *ngIf="fieldValidation('password')">
+      {{ errorMsg.password }}
+    </span>
+    <button class="button">Sign Up</button>
+  </form>
+</div>
